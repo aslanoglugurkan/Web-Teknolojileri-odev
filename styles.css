@@ -5,6 +5,7 @@
 .title {
   width: 100%;
   text-align: center;
+  padding: 20px;
 }
 
 .hobbyContent {
@@ -13,4 +14,13 @@
 
 .slider-image {
   height: 450px;
+}
+
+footer{
+  background-color: #2c2b31;
+  text-align: center;
+  color: white;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+
 }
