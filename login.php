@@ -10,14 +10,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous" />
   <link rel="stylesheet" href="css/styles.css" />
-  <style>
-    input[type=email], input[type=password]{
-      width: 100%;
-      padding: 12px 20px;
-      margin: 8px 0;
-    }
-    
-  </style>
+
 </head>
 
 <body>
@@ -46,7 +39,7 @@
             <a class="nav-link" href="./cv.html">Özgeçmiş</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="./login.html">Giriş</a>
+            <a class="nav-link" href="./login.html">Giriş</a>
           </li>
           
         </ul>
@@ -56,38 +49,33 @@
   <!--CONTENT-->
 
 
-  <form action="login.php" method="POST">
+  
 
 
     <div class="container">
       <div class="">
-        <label for="uname"><b>Kullanici Adi</b></label>
-      </div>
-      <div>
-        <input type="email" placeholder="Kullanici Adinizi Giriniz" name="email" required>
-      </div>
-
-      <div>
-        <label for="psw"><b>Sifre</b></label>
-      </div>
-      <div>
-        <input type="password" placeholder="Sifrenizi Giriniz" name="psw" required>
-      </div>
-
-      <button type="submit" class="button button2" >Giriş</button>
-      <label>
-        <input type="checkbox" checked="checked" name="remember"> Beni Hatirla
-      </label>
-    </div>
-<br>
-    <div class="container" >
+        
+      <h1 class="title">HOŞGELDİNİZ</h1>
+        <h2 class="title">
+        <?php
      
-      <a href="index.html"><input type="button" class="button button2" value="Anasayfa" /></a>
+
+        if(isset($_POST["email"]))
+         echo $_POST["email"];
+         else header("Location: http://localhost/Web-Teknolojileri-odev/login.html") ?>
+      
     </div>
-    <p>
+
+  </h2>
+
+
      
-    </p>
-  </form>
+
+      
+      
+    </div>
+
+  
 
   <footer>
     <div class="container"> © Day Theme. All Rights Reserved.</div>

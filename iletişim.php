@@ -5,19 +5,12 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GİRİŞ</title>
+  <title>iletişim Bilgisi</title>
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous" />
   <link rel="stylesheet" href="css/styles.css" />
-  <style>
-    input[type=email], input[type=password]{
-      width: 100%;
-      padding: 12px 20px;
-      margin: 8px 0;
-    }
-    
-  </style>
+  
 </head>
 
 <body>
@@ -46,9 +39,11 @@
             <a class="nav-link" href="./cv.html">Özgeçmiş</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="./login.html">Giriş</a>
+            <a class="nav-link " href="./login.html">Giriş</a>
           </li>
-          
+          <li class="nav-item">
+            <a class="nav-link" href="./ilgialanlarım.html">İlgialanlarım</a>
+          </li>
         </ul>
       </div>
     </div>
@@ -56,38 +51,76 @@
   <!--CONTENT-->
 
 
-  <form action="login.php" method="POST">
+  <
 
 
     <div class="container">
       <div class="">
-        <label for="uname"><b>Kullanici Adi</b></label>
-      </div>
-      <div>
-        <input type="email" placeholder="Kullanici Adinizi Giriniz" name="email" required>
-      </div>
+        
+      <h1 class="title">Bilgileriniz İçin Teşekkürler</h1>
+        <h2 class="title">
+            <hr>
+        <p>Ad Soyad :
+        <?php
+            if(isset($_POST["adsoyad"]))
+            echo $_POST["adsoyad"];
 
-      <div>
-        <label for="psw"><b>Sifre</b></label>
-      </div>
-      <div>
-        <input type="password" placeholder="Sifrenizi Giriniz" name="psw" required>
-      </div>
+         ?>
+      </p>
+      <p>Eposta Adresi :
+        <?php
+            if(isset($_POST["email"]))
+            echo $_POST["email"];
 
-      <button type="submit" class="button button2" >Giriş</button>
-      <label>
-        <input type="checkbox" checked="checked" name="remember"> Beni Hatirla
-      </label>
+         ?>
+      </p>
+      <p>Telefon numarası :
+        <?php
+            if(isset($_POST["tel"]))
+            echo $_POST["tel"];
+
+         ?>
+      </p>
+      <p>Cinsiyet :
+        <?php
+            if(isset($_POST["cinsiyet"]))
+            echo $_POST["cinsiyet"];
+
+         ?>
+      </p>
+      <p>Bulunduğu il :
+        <?php
+            if(isset($_POST["il"]))
+            echo $_POST["il"];
+
+         ?>
+      </p>
+      <p>İletişim konusu :
+        <?php
+            if(isset($_POST["konu"]))
+            echo $_POST["konu"];
+
+         ?>
+      </p>
+      <p>Mesaj :
+        <?php
+            if(isset($_POST["mesaj"]))
+            echo $_POST["mesaj"];
+
+         ?>
+      </p>
     </div>
-<br>
-    <div class="container" >
+
+    </h2>
+
+<br><br><br><br><br><br>
      
-      <a href="index.html"><input type="button" class="button button2" value="Anasayfa" /></a>
+
+      
+      
     </div>
-    <p>
-     
-    </p>
-  </form>
+
+  
 
   <footer>
     <div class="container"> © Day Theme. All Rights Reserved.</div>

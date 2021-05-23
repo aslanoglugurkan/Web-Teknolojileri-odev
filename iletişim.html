@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İLETİŞİM</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <!--<link rel="stylesheet" href="css/bootstrap.min.css"> -->
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous" />
+
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-blog"></i>&nbsp; RİZE</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link " aria-current="page" href="./index.html">Hakkımda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./city.html">Şehrim</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./team.html">Mirasımız</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="./iletişim.html">İletişim</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./cv.html">Özgeçmiş</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./login.html">Giriş</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./ilgialanlarım.html">İlgialanlarım</a>
+                      </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="title">
+            <h1>Bize Ulaşın</h1>
+        </div>
+        <hr>
+        <form action="iletişim.php" method="POST" onsubmit="return  formKontrol(this)">
+    
+            <h3 >Kişisel Bilgileriniz</h3>
+            <br>
+            <p>
+                Ad Soyad: <input type="text" name="adsoyad"  id="adsoyad">
+            </p>
+            <p>
+                Eposta Adresi : <input type="text" name="email" >
+            </p>
+        
+            <p>
+                Telefon Numarası: <input type="text" name="tel" placeholder="Telefon numarası giriniz" pattern="^[0-9]{11}$" maxlength="11" >
+            </p>
+            <p>
+                Cinsiyet: 
+                <select name="cinsiyet" id="" required> 
+                    <option value="Kadın">Kadın</option>
+                    <option value="Erkek">Erkek</option>
+                    <option disabled selected value> - Seçiniz - </option>
+
+
+                </select>
+            </p>
+            <p>
+                Bulunduğu İl :
+                 <select name="il" id="">
+                     <option value="34">İSTANBUL</option>
+                     <option value="35">İZMİR</option>
+                     <option value="06">ANKARA</option>
+                     <option value="53">RİZE</option>
+                     <option value="08">ARTVİN</option>
+                     <option value="52">ORDU</option>
+                     <option value="55">SAMSUN</option>
+                     <option value="54">SAKARYA</option>
+                     <option value="61">TRABZON</option>
+                     <option value="41">KOCAELİ</option>
+                     <option value="25">ERZURUM</option>
+                     <option value="16">BURSA</option>
+                     <option value="07">ANTALYA</option>
+
+                 </select>
+                </p>
+                 <p>
+                     İletişim Konusu : <input type="text" name="konu">
+
+                 </p>
+                 <p>
+                     Mesaj:   <textarea name="mesaj" id="" cols="50" rows="7"></textarea>
+                 </p>
+                <p>
+                 <button type="submit" class="button button2" >Gönder</button>
+                 <button type="reset" class="button button2">Temizle</button>
+                </p>
+                <br><br><br>
+    </div>
+
+    <!--Content-->
+
+    <footer>
+        <div class="container"> © Day Theme. All Rights Reserved.</div>
+    </footer>
+    <script>
+
+        function formKontrol(frm)
+        {
+            var adsoyad=frm.adsoyad.value;
+            var email = frm.email.value;
+            var atpos=email.indexOf("@");
+            var dotpos=email.lastIndexOf(".");
+            var tel=frm.tel.value;
+            var cinsiyet=frm.cinsiyet.value;
+            var mesaj=frm.mesaj.value;
+
+           if (adsoyad==null || adsoyad=="" || adsoyad.length < 3)
+              {
+                  alert("Kullanıcı adı 3 karakterden az olamaz");
+                  return false;
+              }  
+              if (atpos<1 || dotpos<atpos+2 || dotpos+2>email.legth)
+                {
+                    alert("Lütfen geçerli eposta adresi girin");
+                    return false;
+                }
+                if(tel==null || tel=="" || tel.length>11)
+                {
+                    alert("Geçerli bir telefon numarası giriniz");
+                    return false;
+                }
+                if(cinsiyet==null)
+                {
+                    alert("Cinsiyet seçiniz")
+                    return false;
+                }
+                if(mesaj==null || mesaj==""  )
+                {
+                    alert("Lüften mesaj yazınız")
+                    return false;
+                }
+                return true;
+            }
+           
+        
+        </script>
+</body>
+
+</html>

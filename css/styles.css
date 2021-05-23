@@ -36,4 +36,33 @@ footer{
   width: 700px;
   }
 
- 
+ .form{
+   width: 500px;
+   padding: 12px 20px;
+      margin: 8px 0;
+      margin-top: auto;
+ }
+
+ .button2 {
+  background-color: white;
+  color: black;
+  border: 2px solid #555555;
+  width: 100px;
+}
+.button2:hover {
+  background-color: #555555;
+  color: white;
+}
+.buttonbtn{
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  background-color: #3396ff;
+  width: 20%;
+}
+
+.ul
+{
+        list-style-type: none;
+     
+}
